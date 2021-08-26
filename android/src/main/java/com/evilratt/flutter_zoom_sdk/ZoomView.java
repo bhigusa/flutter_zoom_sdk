@@ -197,7 +197,8 @@ public class ZoomView  implements PlatformView,
             public void onZoomSDKLoginResult(long results) {
                 if (results == ZoomAuthenticationError.ZOOM_AUTH_ERROR_SUCCESS) {
 //                    Once we verify that the request was successful, we may start the meeting
-                    startMeeting(methodCall, result);
+//                    startMeeting(methodCall, result);
+                    joinMeeting(methodCall, result);
                 }
             }
 
