@@ -17,6 +17,7 @@ class ZoomOptions {
 class ZoomMeetingOptions {
 
   String? userId;
+  String? userPassword;
   String? displayName;
   String? meetingId;
   String? meetingPassword;
@@ -33,6 +34,7 @@ class ZoomMeetingOptions {
 
   ZoomMeetingOptions({
     this.userId,
+    this.userPassword,
     this.displayName,
     this.meetingId,
     this.meetingPassword,
