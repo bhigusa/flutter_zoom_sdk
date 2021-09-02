@@ -197,7 +197,10 @@ public class ZoomView  implements PlatformView,
             public void onZoomSDKLoginResult(long results) {
                 if (results == ZoomAuthenticationError.ZOOM_AUTH_ERROR_SUCCESS) {
 //                    Once we verify that the request was successful, we may start the meeting
+                    Toast.makeText(context, "Login Success.", Toast.LENGTH_LONG).show();
                     startMeeting(methodCall, result);
+                }else{
+                    Toast.makeText(context, "Login not successfull, please try again.", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -220,7 +223,7 @@ public class ZoomView  implements PlatformView,
 
             int res = zoomSDK.loginWithZoom(options.get("userId"), options.get("meetingPassword"));
             if (res == ZoomApiError.ZOOM_API_ERROR_SUCCESS) {
-                Toast.makeText(context, "Login Success.", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, "Login Success.", Toast.LENGTH_LONG).show();
                 zoomSDK.addAuthenticationListener(authenticationListener);
             }
         }
