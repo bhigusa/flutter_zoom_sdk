@@ -129,6 +129,8 @@ class ZoomViewController {
   Future<dynamic> login(ZoomMeetingOptions options) async {
     var optionMap = new Map<String, String?>();
     optionMap.putIfAbsent("userId", () => options.userId);
+    optionMap.putIfAbsent("userPassword", () => options.userPassword);
+    optionMap.putIfAbsent("meetingId", () => options.meetingId);
     optionMap.putIfAbsent("meetingPassword", () => options.meetingPassword);
     optionMap.putIfAbsent("disableDialIn", () => options.disableDialIn);
     optionMap.putIfAbsent("disableDrive", () => options.disableDrive);

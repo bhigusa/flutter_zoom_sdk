@@ -188,7 +188,8 @@ public class ZoomView  implements PlatformView,
         }
 
         if(zoomSDK.isLoggedIn()){
-            startMeeting(methodCall, result);
+            //startMeeting(methodCall, result);
+             joinMeeting(methodCall, result);
         }
 
         ZoomSDKAuthenticationListener authenticationListener = new ZoomSDKAuthenticationListener() {
@@ -221,7 +222,7 @@ public class ZoomView  implements PlatformView,
         };
         if(!zoomSDK.isLoggedIn()){
 
-            int res = zoomSDK.loginWithZoom(options.get("userId"), options.get("meetingPassword"));
+            int res = zoomSDK.loginWithZoom(options.get("userId"), options.get("userPassword"));
             if (res == ZoomApiError.ZOOM_API_ERROR_SUCCESS) {
                 Toast.makeText(context, "Login Success.", Toast.LENGTH_LONG).show();
                 zoomSDK.addAuthenticationListener(authenticationListener);
